@@ -1,7 +1,8 @@
-package com.junewon.kyobo_android
+package com.junewon.kyobo_android.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.junewon.kyobo_android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
