@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--    kyobo color-->
+    <color name="kyobo_green">#3f8234</color>
+    <color name="kyobo_gray">#6c6c6c</color>
+    <color name="kyobo_dark_gray">#3d3c3c</color>
+    <color name="kyobo_black">#1d1d1d</color>
+    <color name="kyobo_white">#ffffff</color>
+    <color name="kyobo_light_gray">#dadada</color>
+    <color name="kyobo_blue">#2e5cff</color>
 </resources>
