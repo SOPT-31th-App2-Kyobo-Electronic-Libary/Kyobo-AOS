@@ -23,7 +23,7 @@
         app:itemIconTint="@color/selector_bottom_navi_item"
         app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
         app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
-        app:itemTextColor="@color/kyobo_black"
+        app:itemTextColor="@color/selector_bottom_navi_item"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
