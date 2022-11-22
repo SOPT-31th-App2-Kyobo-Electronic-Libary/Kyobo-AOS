@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view_home_best"
+        android:layout_width="229dp"
+        android:layout_height="112dp"
+        android:background="@drawable/shape_home_card_best"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_home_best"
+        android:layout_width="54dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="14dp"
+        android:src="@color/kyobo_light_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home_best"
+        app:layout_constraintStart_toStartOf="@+id/view_home_best"
+        app:layout_constraintTop_toTopOf="@+id/view_home_best" />
+
+    <TextView
+        android:id="@+id/tv_home_best_book"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="미움받을 용기"
+        android:textAppearance="@style/B1"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toEndOf="@+id/iv_home_best"
+        app:layout_constraintTop_toTopOf="@+id/iv_home_best" />
+
+    <TextView
+        android:id="@+id/tv_home_best_author"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="작가명"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_best_book"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_best_book" />
+
+    <TextView
+        android:id="@+id/tv_home_best_detail"
+        style="@style/TextDefaultStyle"
+        android:layout_width="129dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="자유롭고 행복한 삶을 위한 아들러의 가르침"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_gray"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_best_author"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_best_author" />
+
+    <TextView
+        android:id="@+id/tv_home_best_rank"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/kyobo_green"
+        android:paddingStart="4dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="1dp"
+        android:text="1"
+        android:textAlignment="center"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_white"
+        app:layout_constraintStart_toStartOf="@+id/iv_home_best"
+        app:layout_constraintTop_toTopOf="@+id/iv_home_best" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
