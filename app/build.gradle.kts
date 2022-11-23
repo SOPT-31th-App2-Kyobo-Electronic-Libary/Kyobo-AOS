@@ -51,6 +51,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        compose = true
     }
 }
 
@@ -86,6 +87,7 @@ dependencies {
     Deps.AndroidX.Compose.run {
         implementation(activity)
         implementation(material)
+        implementation(preview)
         implementation(animations)
         implementation(tool)
         implementation(viewModel)
