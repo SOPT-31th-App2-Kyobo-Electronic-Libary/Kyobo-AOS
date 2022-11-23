@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id(Plugins.ANDROID_APPLICATION)
     id(Plugins.KOTLIN_ANDROID)
@@ -9,6 +11,9 @@ plugins {
     id(Plugins.KOTLIN_SERIALIZATION)
 }
 
+val properties = Properties()
+properties.load(project.rootProject.file("local.properties").inputStream())
+
 android {
     compileSdk = AppConfig.compileSdkVersion
 
@@ -19,6 +24,12 @@ android {
         versionCode = AppConfig.versionCode
         versionName = AppConfig.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "BASE_URL",
+            properties.getProperty("BASE_URL")
+        )
     }
 
     buildTypes {
