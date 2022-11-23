@@ -1,8 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.home.HomeFragment">
 
-</FrameLayout>
+    <View
+        android:id="@+id/view_home_top"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/kyobo_white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_home_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/selector_home_btn_favorite"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home_top"
+        app:layout_constraintStart_toStartOf="@+id/view_home_top"
+        app:layout_constraintTop_toTopOf="@+id/view_home_top" />
+
+    <TextView
+        android:id="@+id/tv_home_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="홍익대학교"
+        android:textAppearance="@style/H3"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home_top"
+        app:layout_constraintStart_toEndOf="@+id/btn_home_fav"
+        app:layout_constraintTop_toTopOf="@+id/view_home_top" />
+
+    <ImageButton
+        android:id="@+id/btn_home_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:background="@drawable/ic_home_search"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home_top"
+        app:layout_constraintEnd_toEndOf="@+id/view_home_top"
+        app:layout_constraintTop_toTopOf="@+id/view_home_top" />
+
+    <TextView
+        android:id="@+id/tv_home_borrowed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="대출도서 목록"
+        android:textAppearance="@style/H2"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_home_top" />
+
+    <TextView
+        android:id="@+id/tv_home_borrowed_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="더보기"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_borrowed_title"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_borrowed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_borrowed_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_borrowed_title" />
+
+    <TextView
+        android:id="@+id/tv_home_best_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:text="베스트 자료"
+        android:textAppearance="@style/H2"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_borrowed_title"
+        app:layout_constraintTop_toBottomOf="@+id/rv_home_borrowed" />
+
+    <TextView
+        android:id="@+id/tv_home_best_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더보기"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_best_title"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_borrowed_more" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_best"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="GridLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_best_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_best_title" />
+
+    <TextView
+        android:id="@+id/tv_home_new_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="신착 자료"
+        android:textAppearance="@style/H2"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_best_title"
+        app:layout_constraintTop_toBottomOf="@+id/rv_home_best" />
+
+    <TextView
+        android:id="@+id/tv_home_new_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="더보기"
+        android:textAppearance="@style/B3"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_new_title"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_best_more" />
+
+    <TextView
+        android:id="@+id/tv_home_new_all"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전체"
+        android:textAppearance="@style/S2"
+        android:textColor="@color/kyobo_black" />
+
+    <TextView
+        android:id="@+id/tv_home_new_domestic"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="국내도서"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black" />
+
+    <TextView
+        android:id="@+id/tv_home_new_foreign"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="외국도서"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black" />
+
+    <TextView
+        android:id="@+id/tv_home_new_ebook"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ebook"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black" />
+
+    <TextView
+        android:id="@+id/tv_home_new_paper"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="논문"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black" />
+
+    <TextView
+        android:id="@+id/tv_home_new_etc"
+        style="@style/TextDefaultStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기타"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_home_new_catagory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:constraint_referenced_ids="tv_home_new_all,tv_home_new_domestic,tv_home_new_foreign,tv_home_new_ebook,tv_home_new_paper,tv_home_new_etc"
+        app:flow_horizontalGap="30dp"
+        app:flow_horizontalStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_new_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_new_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_new_title"
+        app:layout_constraintTop_toBottomOf="@+id/flow_home_new_catagory" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/appCompatButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_home_btn_apply"
+        android:clickable="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:paddingVertical="5dp"
+        android:text="희망도서 신청하기"
+        android:textAppearance="@style/B1"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintTop_toBottomOf="@+id/rv_home_new"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/tv_home_catagory_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="분야별 자료"
+        android:textAppearance="@style/H2"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_new_title"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+
+    <TextView
+        android:id="@+id/tv_home_catagory_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="경제/경영"
+        android:textAppearance="@style/B2"
+        android:textColor="@color/kyobo_black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_catagory_title"
+        app:layout_constraintEnd_toStartOf="@+id/btn_home_catagory" />
+
+    <ImageButton
+        android:id="@+id/btn_home_catagory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_home_dropdown"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_catagory_content"
+        app:layout_constraintEnd_toEndOf="@+id/tv_home_new_more"
+        app:layout_constraintTop_toTopOf="@+id/tv_home_catagory_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_home_catagory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="@+id/tv_home_catagory_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_catagory_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
