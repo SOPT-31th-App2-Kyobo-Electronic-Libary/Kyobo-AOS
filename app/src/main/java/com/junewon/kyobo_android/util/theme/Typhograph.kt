@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.util.componet.dpToSp
+import com.junewon.kyobo_android.util.dpToSp
 
 private val notoSansKr = FontFamily(
     Font(
