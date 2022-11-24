@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.ui.componet
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.R.*
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 
 @Composable
@@ -51,14 +52,14 @@ fun KyoboOutLineButton(
         onClick = onClick,
         textStyle = textStyle,
         contentPadding = contentPadding,
-        backGroundColor = colorResource(id = R.color.kyobo_white),
-        contentColor = colorResource(R.color.kyobo_green),
+        backGroundColor = colorResource(id = color.kyobo_white),
+        contentColor = colorResource(color.kyobo_green),
         modifier = Modifier
-            .background(color = colorResource(id = R.color.kyobo_white))
+            .background(color = colorResource(id = color.kyobo_white))
             .clip(RoundedCornerShape(4.dp))
             .border(
                 width = 1.dp,
-                color = colorResource(id = R.color.kyobo_green),
+                color = colorResource(id = color.kyobo_green),
                 RoundedCornerShape(4.dp)
             )
     ) {
