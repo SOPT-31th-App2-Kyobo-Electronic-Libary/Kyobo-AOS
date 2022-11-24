@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity
