@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,40 +28,42 @@ import com.junewon.kyobo_android.util.theme.KyoboTheme
 
 @Composable
 fun SearchScreen(books: List<RecentBook>) {
-    Column(Modifier.fillMaxSize()) {
-        Spacer(modifier = Modifier.height(11.dp))
-        SearchAppBar()
-        Spacer(modifier = Modifier.height(30.dp))
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 16.dp, end = 18.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(text = "최근검색어", style = KyoboTheme.typography.b2)
-            Text(text = "전체삭제", style = KyoboTheme.typography.b4, color = colorResource(id = R.color.kyobo_gray))
+    Surface {
+        Column(Modifier.fillMaxSize()) {
+            Spacer(modifier = Modifier.height(11.dp))
+            SearchAppBar()
+            Spacer(modifier = Modifier.height(30.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp, end = 18.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(text = "최근검색어", style = KyoboTheme.typography.b2)
+                Text(text = "전체삭제", style = KyoboTheme.typography.b4, color = colorResource(id = R.color.kyobo_gray))
+            }
+            Spacer(modifier = Modifier.height(30.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp)
+            ) {
+                RecentSearchTerm()
+                Spacer(modifier = Modifier.width(12.dp))
+                RecentSearchTerm(term = "데미안")
+            }
+            Spacer(modifier = Modifier.height(15.dp))
+            RecentSearchTerm(modifier = Modifier.padding(start = 16.dp), term = "지적대화를 위한 넓고 얕은 지식")
+            Spacer(modifier = Modifier.height(40.dp))
+            Text(
+                text = "최근 본 도서",
+                style = KyoboTheme.typography.b2.copy(),
+                modifier = Modifier.padding(16.dp)
+            )
+            Spacer(modifier = Modifier.height(15.dp))
+            RecentBooks(recentBooks = books)
         }
-        Spacer(modifier = Modifier.height(30.dp))
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 16.dp)
-        ) {
-            RecentSearchTerm()
-            Spacer(modifier = Modifier.width(12.dp))
-            RecentSearchTerm(term = "데미안")
-        }
-        Spacer(modifier = Modifier.height(15.dp))
-        RecentSearchTerm(modifier = Modifier.padding(start = 16.dp), term = "지적대화를 위한 넓고 얕은 지식")
-        Spacer(modifier = Modifier.height(40.dp))
-        Text(
-            text = "최근 본 도서",
-            style = KyoboTheme.typography.b2.copy(),
-            modifier = Modifier.padding(16.dp)
-        )
-        Spacer(modifier = Modifier.height(15.dp))
-        RecentBooks(recentBooks = books)
     }
 }
 
