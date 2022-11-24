@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.ui.componet.search
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -18,7 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 @Composable
 fun RecentSearchTerm(

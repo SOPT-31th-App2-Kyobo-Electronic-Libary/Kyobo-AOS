@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
@@ -21,10 +19,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
 import com.junewon.kyobo_android.data.entity.RecentBook
-import com.junewon.kyobo_android.util.componet.RecentBooks
-import com.junewon.kyobo_android.util.componet.RecentSearchTerm
-import com.junewon.kyobo_android.util.componet.SearchAppBar
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.ui.componet.search.RecentBooks
+import com.junewon.kyobo_android.ui.componet.search.RecentSearchTerm
+import com.junewon.kyobo_android.ui.componet.search.SearchAppBar
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 @Composable
 fun SearchScreen(books: List<RecentBook>) {

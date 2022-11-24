@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.theme
+package com.junewon.kyobo_android.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable

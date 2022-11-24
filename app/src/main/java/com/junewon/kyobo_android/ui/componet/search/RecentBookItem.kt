@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.ui.componet.search
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.junewon.kyobo_android.R
 import com.junewon.kyobo_android.data.entity.RecentBook
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 @Composable
 fun RecentBookItem(
