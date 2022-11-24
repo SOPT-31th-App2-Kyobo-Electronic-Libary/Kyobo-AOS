@@ -16,13 +16,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+        navigateTo<HomeFragment>(R.id.fc_main)
         initBottomNavigation()
     }
 
     private fun initBottomNavigation() {
-        binding.bnvMain.run {
-            setOnItemSelectedListener { onNavigationItemSelected(it.itemId) }
+        binding.bnvMain.setOnItemSelectedListener {
+            onNavigationItemSelected(it.itemId)
         }
     }
 
