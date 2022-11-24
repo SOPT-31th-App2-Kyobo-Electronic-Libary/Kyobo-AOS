@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Kyobo-Android</string>
+
+    <!--    kyobo- button-->
+    <string name="reserve_book">예약하기</string>
+    <string name="take_out_book">대출하기</string>
+    <string name="return_book">반납하다</string>
+    <string name="overdue_book">연장하다</string>
 </resources>
