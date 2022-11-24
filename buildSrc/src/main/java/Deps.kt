@@ -32,9 +32,10 @@ object Deps {
 
         object Compose {
             const val activity = "androidx.activity:activity-compose:1.5.1"
-            const val material = "androidx.compose.material:material:1.2.1"
-            const val animations = "androidx.compose.animation:animation:1.2.1"
-            const val tool = "androidx.compose.ui:ui-tooling:1.2.1"
+            const val material = "androidx.compose.material:material:${Versions.COMPOSE}"
+            const val animations = "androidx.compose.animation:animation:${Versions.COMPOSE}"
+            const val tool = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
+            const val preview = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
             const val mdcTheme = "com.google.android.material:compose-theme-adapter:1.1.16"
             const val appCompatTheme = "com.google.accompanist:accompanist-appcompat-theme:0.25.1"

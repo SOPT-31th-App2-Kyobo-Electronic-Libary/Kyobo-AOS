@@ -18,6 +18,7 @@ object Versions {
     const val ROOM = "2.4.2"
     const val DATASTORE = "1.0.0"
     const val PAGING = "3.1.1"
+    const val COMPOSE = "1.2.1"
     const val WORKMANGER = "2.7.1"
 
     // Testing
