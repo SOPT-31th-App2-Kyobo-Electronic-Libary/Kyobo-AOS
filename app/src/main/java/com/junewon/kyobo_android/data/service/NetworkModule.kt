@@ -10,6 +10,7 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
     inline fun <reified T> create(): T = retrofit.create(T::class.java)
 }
 
