@@ -110,6 +110,7 @@ dependencies {
         implementation(retrofit2)
         // kotlinx-serialization-json
         implementation(kotlinSerializationJson)
+        implementation(kotlinSerializationConverter)
     }
     Deps.ThirdParty.run {
         implementation(timber)

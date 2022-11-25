@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.junewon.kyobo_android.data.entity.RecentBook
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 class SearchActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

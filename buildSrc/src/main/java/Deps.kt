@@ -60,6 +60,7 @@ object Deps {
         const val retrofit2 = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
         const val retrofit2Converter = "com.squareup.retrofit2:converter-gson:${Versions.GSON}"
         const val kotlinSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
+        const val kotlinSerializationConverter = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0"
     }
 
     object ThirdParty {

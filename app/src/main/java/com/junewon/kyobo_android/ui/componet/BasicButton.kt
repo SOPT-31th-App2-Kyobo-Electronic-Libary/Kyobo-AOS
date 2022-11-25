@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.ui.componet
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
@@ -16,7 +16,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.util.theme.KyoboTheme
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 
 /**

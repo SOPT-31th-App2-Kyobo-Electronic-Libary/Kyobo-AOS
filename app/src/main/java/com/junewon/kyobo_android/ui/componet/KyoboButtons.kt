@@ -1,4 +1,4 @@
-package com.junewon.kyobo_android.util.componet
+package com.junewon.kyobo_android.ui.componet
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,23 +19,25 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.util.theme.KyoboTheme
-
+import com.junewon.kyobo_android.R.color
+import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 @Composable
 fun KyoboButton(
+    modifier: Modifier = Modifier,
     onClick: () -> Unit = {},
     text: String = stringResource(id = R.string.take_out_book),
     textStyle: TextStyle = KyoboTheme.typography.h2,
     contentPadding: PaddingValues = PaddingValues()
 ) {
     BasicButton(
+        modifier = modifier,
         onClick = onClick,
         textStyle = textStyle,
         contentPadding = contentPadding
     ) {
         Text(
-            text = text,
+            text = text
         )
     }
 }
@@ -51,19 +53,19 @@ fun KyoboOutLineButton(
         onClick = onClick,
         textStyle = textStyle,
         contentPadding = contentPadding,
-        backGroundColor = colorResource(id = R.color.kyobo_white),
-        contentColor = colorResource(R.color.kyobo_green),
+        backGroundColor = colorResource(id = color.kyobo_white),
+        contentColor = colorResource(color.kyobo_green),
         modifier = Modifier
-            .background(color = colorResource(id = R.color.kyobo_white))
+            .background(color = colorResource(id = color.kyobo_white))
             .clip(RoundedCornerShape(4.dp))
             .border(
                 width = 1.dp,
-                color = colorResource(id = R.color.kyobo_green),
-                RoundedCornerShape(4.dp)
+                color = colorResource(id = color.kyobo_green),
+                RoundedCornerShape(8.dp)
             )
     ) {
         Text(
-            text = text,
+            text = text
         )
     }
 }
