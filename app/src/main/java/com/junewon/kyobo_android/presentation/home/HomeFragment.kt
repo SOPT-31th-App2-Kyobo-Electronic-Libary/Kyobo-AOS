@@ -1,16 +1,17 @@
 package com.junewon.kyobo_android.presentation.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.junewon.kyobo_android.data.model.response.HomeResponse
 import com.junewon.kyobo_android.data.service.ServicePool
 import com.junewon.kyobo_android.databinding.FragmentHomeBinding
+import com.junewon.kyobo_android.presentation.detail.DetailActivity
 import com.junewon.kyobo_android.presentation.home.best.BestAdapter
 import com.junewon.kyobo_android.presentation.home.borrow.BorrowedAdapter
 import com.junewon.kyobo_android.presentation.home.catagory.CategoryAdapter
@@ -40,23 +41,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //val borrowed = BorrowedAdapter(requireContext())
-        //binding.rvHomeBorrowed.adapter = borrowed
-        //borrowed.setBorrowedList(viewModel.borrowedList)
-
-        //val best = BestAdapter(requireContext())
-        //binding.rvHomeBest.adapter = best
-        //best.setBestList(viewModel.bestList)
-
-        //val newbook = NewAdapter(requireContext())
-        //binding.rvHomeNew.adapter = newbook
-        //newbook.setNewList(viewModel.newList)
-
-        //val category = CategoryAdapter(requireContext())
-        //binding.rvHomeCategory.adapter = category
-        //category.setCategoryList(viewModel.categoryList)
-
-
         homeService.getBook()
             .enqueue(object : Callback<HomeResponse> {
                 override fun onResponse(call: Call<HomeResponse>, response: Response<HomeResponse>) {
@@ -66,19 +50,19 @@ class HomeFragment : Fragment() {
                         response.body()?.books?.let { viewModel.newList.addAll(it.newBook) }
                         response.body()?.books?.let { viewModel.categoryList.addAll(it.categoryBook) }
 
-                        val borrowed = BorrowedAdapter(requireContext())
+                        val borrowed = BorrowedAdapter(::navigateDetailWith, requireContext())
                         binding.rvHomeBorrowed.adapter = borrowed
                         borrowed.setBorrowedList(viewModel.borrowedList)
 
-                        val best = BestAdapter(requireContext())
+                        val best = BestAdapter(::navigateDetailWith, requireContext())
                         binding.rvHomeBest.adapter = best
                         best.setBestList(viewModel.bestList)
 
-                        val newbook = NewAdapter(requireContext())
+                        val newbook = NewAdapter(::navigateDetailWith, requireContext())
                         binding.rvHomeNew.adapter = newbook
                         newbook.setNewList(viewModel.newList)
 
-                        val category = CategoryAdapter(requireContext())
+                        val category = CategoryAdapter(::navigateDetailWith, requireContext())
                         binding.rvHomeCategory.adapter = category
                         category.setCategoryList(viewModel.categoryList)
 
@@ -92,6 +76,12 @@ class HomeFragment : Fragment() {
                 }
 
             })
+    }
+    private fun navigateDetailWith(id: Int) {
+        val intent = Intent(requireContext(), DetailActivity::class.java).apply {
+            putExtra("id", id)
+        }
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

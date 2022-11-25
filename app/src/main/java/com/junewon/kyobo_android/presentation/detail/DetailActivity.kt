@@ -18,5 +18,9 @@ class DetailActivity : ComponentActivity() {
                 )
             }
         }
+        fetchBookDetail()
+    }
+    private fun fetchBookDetail() {
+        viewModel.fetchBookDetail(intent.getIntExtra("id", 6))
     }
 }

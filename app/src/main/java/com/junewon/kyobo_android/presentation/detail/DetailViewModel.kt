@@ -16,21 +16,7 @@ class DetailViewModel : ViewModel() {
     private var _uiState = MutableStateFlow(Book())
     val uiState = _uiState.asStateFlow()
 
-    init {
-        // TODO 나중에 이 부분은 지울꺼~
-        viewModelScope.launch {
-            runCatching { detailService.fetchBookDetail(4) }
-                .onSuccess { response ->
-                    _uiState.update {
-                        response.data.book
-                    }
-                }.onFailure {
-                    Log.e("Error", "DetailViewModel - fetchBookDetail", it)
-                }
-        }
-    }
-
-    private fun fetchBookDetail(bookId: Int) {
+    fun fetchBookDetail(bookId: Int) {
         viewModelScope.launch {
             runCatching { detailService.fetchBookDetail(bookId = bookId) }
                 .onSuccess { response ->

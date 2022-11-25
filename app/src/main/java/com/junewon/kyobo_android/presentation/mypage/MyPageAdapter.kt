@@ -1,8 +1,6 @@
 package com.junewon.kyobo_android.presentation.mypage
 
-import android.graphics.Rect
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -10,6 +8,7 @@ import com.junewon.kyobo_android.data.model.response.MyPageResponse
 import com.junewon.kyobo_android.databinding.ItemMyPageBorrowedBinding
 
 class MyPageAdapter(
+    private val navigateDetailWith: (Int) -> Unit = {},
     private val borrowedList : List<MyPageResponse.Data.Book>
 ) : RecyclerView.Adapter<MyPageAdapter.MyViewHolder>() {
 
@@ -18,6 +17,9 @@ class MyPageAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: MyPageResponse.Data.Book) {
             binding.ivHomeBorrowed.load(data.image)
+            binding.ivHomeBorrowed.setOnClickListener {
+                navigateDetailWith(data.id)
+            }
             binding.tvMyPageBookTitle.text = data.name
             binding.tvMyPageBorrowDate.text = data.lendingDate
             binding.tvMyPageReturnDate.text = data.returnDate
