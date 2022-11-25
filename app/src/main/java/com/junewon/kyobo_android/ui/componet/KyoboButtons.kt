@@ -25,12 +25,14 @@ import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
 @Composable
 fun KyoboButton(
+    modifier: Modifier = Modifier,
     onClick: () -> Unit = {},
     text: String = stringResource(id = R.string.take_out_book),
     textStyle: TextStyle = KyoboTheme.typography.h2,
     contentPadding: PaddingValues = PaddingValues()
 ) {
     BasicButton(
+        modifier = modifier,
         onClick = onClick,
         textStyle = textStyle,
         contentPadding = contentPadding
@@ -60,7 +62,7 @@ fun KyoboOutLineButton(
             .border(
                 width = 1.dp,
                 color = colorResource(id = color.kyobo_green),
-                RoundedCornerShape(4.dp)
+                RoundedCornerShape(8.dp)
             )
     ) {
         Text(
