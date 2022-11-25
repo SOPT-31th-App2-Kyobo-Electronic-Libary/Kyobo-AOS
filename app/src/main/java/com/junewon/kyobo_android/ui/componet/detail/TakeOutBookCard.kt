@@ -48,7 +48,6 @@ fun TakeOutBookCard(returnDate: String) {
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(text = "반납예정", style = KyoboTheme.typography.b2)
             }
-            Spacer(modifier = Modifier.width(32.dp))
             Column(
                 Modifier
                     .wrapContentHeight()
