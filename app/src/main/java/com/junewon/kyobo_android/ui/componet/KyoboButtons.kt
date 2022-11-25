@@ -19,9 +19,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.R.*
+import com.junewon.kyobo_android.R.color
 import com.junewon.kyobo_android.ui.theme.KyoboTheme
-
 
 @Composable
 fun KyoboButton(
@@ -38,7 +37,7 @@ fun KyoboButton(
         contentPadding = contentPadding
     ) {
         Text(
-            text = text,
+            text = text
         )
     }
 }
@@ -66,7 +65,7 @@ fun KyoboOutLineButton(
             )
     ) {
         Text(
-            text = text,
+            text = text
         )
     }
 }

@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.junewon.kyobo_android.R.*
+import com.junewon.kyobo_android.R.drawable
 import com.junewon.kyobo_android.ui.componet.KyoboButton
 import com.junewon.kyobo_android.ui.theme.KyoboTheme
 
@@ -32,7 +32,8 @@ fun TakeOutBookCard(returnDate: String) {
                 .padding(horizontal = 16.dp)
         ) {
             Image(
-                painter = painterResource(id = drawable.ic_start_filled), contentDescription = "",
+                painter = painterResource(id = drawable.ic_start_filled),
+                contentDescription = "",
                 Modifier
                     .padding(top = 26.dp, bottom = 27.dp)
             )
@@ -49,9 +50,8 @@ fun TakeOutBookCard(returnDate: String) {
             Spacer(modifier = Modifier.width(32.dp))
             KyoboButton(
                 modifier = Modifier.padding(top = 17.dp, bottom = 19.dp),
-                contentPadding = PaddingValues(vertical = 10.dp, horizontal = 57.dp)
+                contentPadding = PaddingValues(vertical = 10.dp, horizontal = 47.dp)
             )
-
         }
     }
 }

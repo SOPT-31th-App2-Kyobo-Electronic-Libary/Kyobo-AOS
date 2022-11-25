@@ -29,7 +29,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.junewon.kyobo_android.R
-import com.junewon.kyobo_android.R.*
+import com.junewon.kyobo_android.R.color
 import com.junewon.kyobo_android.ui.componet.detail.DetailBookImage
 import com.junewon.kyobo_android.ui.componet.detail.TakeOutBookCard
 import com.junewon.kyobo_android.ui.theme.KyoboTheme
@@ -75,6 +75,7 @@ fun DetailScreen(
                 PdfFileCard()
                 Spacer(modifier = Modifier.height(29.dp))
                 DetailBookMenu()
+                Spacer(modifier = Modifier.height(6.dp))
                 Spacer(
                     modifier = Modifier
                         .size(width = 50.dp, height = 2.dp)
