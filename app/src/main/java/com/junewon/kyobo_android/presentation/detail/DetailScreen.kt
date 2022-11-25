@@ -70,7 +70,7 @@ fun DetailScreen(
                 Spacer(modifier = Modifier.height(6.dp))
                 AuthorWithPublisherText(author = uiState.author, publisher = uiState.publisher)
                 Spacer(modifier = Modifier.height(6.dp))
-                Text(text = uiState.pubDate)
+                Text(text = uiState.pubDate, style = KyoboTheme.typography.b1)
                 Spacer(modifier = Modifier.height(14.dp))
                 PdfFileCard()
                 Spacer(modifier = Modifier.height(29.dp))
