@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.junewon.kyobo_android.data.model.response.HomeResponse
 import com.junewon.kyobo_android.data.service.ServicePool
@@ -16,6 +18,7 @@ import com.junewon.kyobo_android.presentation.home.best.BestAdapter
 import com.junewon.kyobo_android.presentation.home.borrow.BorrowedAdapter
 import com.junewon.kyobo_android.presentation.home.catagory.CategoryAdapter
 import com.junewon.kyobo_android.presentation.home.newbook.NewAdapter
+import com.junewon.kyobo_android.presentation.search.SearchActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -66,6 +69,16 @@ class HomeFragment : Fragment() {
                         binding.rvHomeCategory.adapter = category
                         category.setCategoryList(viewModel.categoryList)
 
+                        // 그리드 적용
+                        val gridLayoutManager = GridLayoutManager(activity, 2)
+                        gridLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+                        binding.rvHomeBest.layoutManager = gridLayoutManager
+
+                        binding.btnHomeSearch.setOnClickListener {
+                            navigateToSearch()
+                        }
+
+
                     } else {
                         Snackbar.make(binding.root, "데이터를 불러오는데 실패했습니다", Snackbar.LENGTH_SHORT).show()
                     }
@@ -83,6 +96,12 @@ class HomeFragment : Fragment() {
         }
         startActivity(intent)
     }
+
+    private fun navigateToSearch() {
+        val intent = Intent(requireContext(), SearchActivity::class.java)
+        startActivity(intent)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

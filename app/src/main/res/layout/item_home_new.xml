@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingEnd="20dp">
 
     <ImageView
         android:id="@+id/iv_home_new"
         android:layout_width="83dp"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         android:src="@drawable/img_dummy_book"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintDimensionRatio="83:111"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

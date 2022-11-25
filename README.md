@@ -1,6 +1,6 @@
 # 📚 Kyobo-AOS 📚
 
-> THE SOPT 31TH 합동 세미나 2조 Android팀 <br>
+> IN SOPT 31TH 합동 세미나 2조 Android팀 <br>
 22.11.12 - 22.11.25
 
 <br>

@@ -12,6 +12,7 @@ import com.junewon.kyobo_android.data.model.response.MyPageResponse
 import com.junewon.kyobo_android.data.service.ServicePool
 import com.junewon.kyobo_android.databinding.FragmentMyPageBinding
 import com.junewon.kyobo_android.presentation.detail.DetailActivity
+import com.junewon.kyobo_android.presentation.search.SearchActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +28,6 @@ class MyPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //return inflater.inflate(R.layout.fragment_my_page, container, false)
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -49,6 +49,10 @@ class MyPageFragment : Fragment() {
                 } else {
                     Log.d("MYPAGE/SEMI-SUCCESS", "반 정도 성공ㅋ $response")
                 }
+
+                binding.btnMyPageSearch.setOnClickListener {
+                    navigateToSearch()
+                }
             }
 
             override fun onFailure(call: Call<MyPageResponse>, t: Throwable) {
@@ -68,6 +72,11 @@ class MyPageFragment : Fragment() {
         val intent = Intent(requireContext(), DetailActivity::class.java).apply {
             putExtra("id", id)
         }
+        startActivity(intent)
+    }
+
+    private fun navigateToSearch() {
+        val intent = Intent(requireContext(), SearchActivity::class.java)
         startActivity(intent)
     }
 }
