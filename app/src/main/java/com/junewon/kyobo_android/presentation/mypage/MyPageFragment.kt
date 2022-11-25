@@ -1,5 +1,6 @@
 package com.junewon.kyobo_android.presentation.mypage
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.junewon.kyobo_android.data.model.response.MyPageResponse
 import com.junewon.kyobo_android.data.service.ServicePool
 import com.junewon.kyobo_android.databinding.FragmentMyPageBinding
+import com.junewon.kyobo_android.presentation.detail.DetailActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,7 +38,7 @@ class MyPageFragment : Fragment() {
     }
 
     private fun getBorrowedInfo() {
-        myPageService.getBorrowedInfo().enqueue(object: Callback<MyPageResponse> {
+        myPageService.getBorrowedInfo().enqueue(object : Callback<MyPageResponse> {
             override fun onResponse(
                 call: Call<MyPageResponse>,
                 response: Response<MyPageResponse>
@@ -44,8 +46,7 @@ class MyPageFragment : Fragment() {
                 if (response.isSuccessful) {
                     response.body()?.let { showBorrowedInfo(it) }
                     Log.d("MYPAGE/SUCCESS", "My page 성공! $response")
-                }
-                else {
+                } else {
                     Log.d("MYPAGE/SEMI-SUCCESS", "반 정도 성공ㅋ $response")
                 }
             }
@@ -57,9 +58,16 @@ class MyPageFragment : Fragment() {
     }
 
     private fun showBorrowedInfo(response: MyPageResponse) {
-        val adapter = MyPageAdapter(response.data.books)
+        val adapter = MyPageAdapter(navigateDetailWith = ::navigateDetailWith, borrowedList = response.data.books)
         binding.rvMyPageBorrowed.adapter = adapter
         val temp = DividerItemDecoration(this.context, 1)
         binding.rvMyPageBorrowed.addItemDecoration(temp)
+    }
+
+    private fun navigateDetailWith(id: Int) {
+        val intent = Intent(requireContext(), DetailActivity::class.java).apply {
+            putExtra("id", id)
+        }
+        startActivity(intent)
     }
 }
