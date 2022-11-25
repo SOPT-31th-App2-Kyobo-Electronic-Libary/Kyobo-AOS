@@ -5,9 +5,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class BaseResponse(
+data class BaseResponse<T>(
     @SerialName("data")
-    val `data`: BookDetailResponse,
+    val `data`: T,
     val message: String,
     val status: Int,
     val success: Boolean
