@@ -18,6 +18,7 @@ import com.junewon.kyobo_android.presentation.home.best.BestAdapter
 import com.junewon.kyobo_android.presentation.home.borrow.BorrowedAdapter
 import com.junewon.kyobo_android.presentation.home.catagory.CategoryAdapter
 import com.junewon.kyobo_android.presentation.home.newbook.NewAdapter
+import com.junewon.kyobo_android.presentation.search.SearchActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -73,6 +74,10 @@ class HomeFragment : Fragment() {
                         gridLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
                         binding.rvHomeBest.layoutManager = gridLayoutManager
 
+                        binding.btnHomeSearch.setOnClickListener {
+                            navigateToSearch()
+                        }
+
 
                     } else {
                         Snackbar.make(binding.root, "데이터를 불러오는데 실패했습니다", Snackbar.LENGTH_SHORT).show()
@@ -91,6 +96,12 @@ class HomeFragment : Fragment() {
         }
         startActivity(intent)
     }
+
+    private fun navigateToSearch() {
+        val intent = Intent(requireContext(), SearchActivity::class.java)
+        startActivity(intent)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
