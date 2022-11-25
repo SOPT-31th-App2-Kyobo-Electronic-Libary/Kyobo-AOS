@@ -67,7 +67,7 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_home_top"
-        tools:text="B946234 진서연" />
+        android:text="B946234 진서연" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -206,24 +206,36 @@
         app:layout_constraintTop_toTopOf="@+id/tv_dropdown_my_date" />
 
     <TextView
+        android:id="@+id/textView2"
         style="@style/TextDefaultStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
         android:text="연도별"
         android:textAppearance="@style/B3"
         android:textColor="@color/kyobo_dark_gray"
         app:layout_constraintBottom_toBottomOf="@+id/btn_dropdown_books"
         app:layout_constraintEnd_toEndOf="@+id/btn_dropdown_books"
-        app:layout_constraintTop_toTopOf="@+id/btn_dropdown_books"
-        android:layout_marginEnd="9dp"/>
+        app:layout_constraintTop_toTopOf="@+id/btn_dropdown_books" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="8dp"
         android:layout_height="4dp"
+        android:layout_marginLeft="9dp"
         android:background="@drawable/ic_my_page_dropdown"
         app:layout_constraintBottom_toBottomOf="@+id/btn_dropdown_books"
         app:layout_constraintStart_toStartOf="@+id/btn_dropdown_books"
-        app:layout_constraintTop_toTopOf="@+id/btn_dropdown_books"
-        android:layout_marginLeft="9dp"/>
+        app:layout_constraintTop_toTopOf="@+id/btn_dropdown_books" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_my_page_borrowed"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dropdown_books"
+        tools:listitem="@layout/item_my_page_borrowed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

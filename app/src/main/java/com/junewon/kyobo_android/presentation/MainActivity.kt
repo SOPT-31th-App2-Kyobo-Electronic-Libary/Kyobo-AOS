@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        navigateTo<HomeFragment>(R.id.fc_main)
+        //navigateTo<HomeFragment>(R.id.fc_main)
+        navigateTo<MyPageFragment>(R.id.fc_main)
         initBottomNavigation()
     }
 
