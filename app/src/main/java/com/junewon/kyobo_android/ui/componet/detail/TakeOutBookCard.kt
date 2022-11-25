@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -48,10 +49,17 @@ fun TakeOutBookCard(returnDate: String) {
                 Text(text = "반납예정", style = KyoboTheme.typography.b2)
             }
             Spacer(modifier = Modifier.width(32.dp))
-            KyoboButton(
-                modifier = Modifier.padding(top = 17.dp, bottom = 19.dp),
-                contentPadding = PaddingValues(vertical = 10.dp, horizontal = 47.dp)
-            )
+            Column(
+                Modifier
+                    .wrapContentHeight()
+                    .fillMaxWidth(),
+                horizontalAlignment = Alignment.End
+            ) {
+                KyoboButton(
+                    modifier = Modifier.padding(top = 17.dp, bottom = 19.dp),
+                    contentPadding = PaddingValues(vertical = 10.dp, horizontal = 57.dp)
+                )
+            }
         }
     }
 }
