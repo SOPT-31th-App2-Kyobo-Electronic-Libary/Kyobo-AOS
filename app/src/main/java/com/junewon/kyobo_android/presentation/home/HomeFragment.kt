@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.junewon.kyobo_android.data.model.response.HomeResponse
 import com.junewon.kyobo_android.data.service.ServicePool
@@ -65,6 +67,12 @@ class HomeFragment : Fragment() {
                         val category = CategoryAdapter(::navigateDetailWith, requireContext())
                         binding.rvHomeCategory.adapter = category
                         category.setCategoryList(viewModel.categoryList)
+
+                        // 그리드 적용
+                        val gridLayoutManager = GridLayoutManager(activity, 2)
+                        gridLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+                        binding.rvHomeBest.layoutManager = gridLayoutManager
+
 
                     } else {
                         Snackbar.make(binding.root, "데이터를 불러오는데 실패했습니다", Snackbar.LENGTH_SHORT).show()
