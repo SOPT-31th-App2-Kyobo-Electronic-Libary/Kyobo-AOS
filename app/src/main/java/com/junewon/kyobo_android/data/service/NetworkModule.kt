@@ -16,4 +16,5 @@ object NetworkModule {
 
 object ServicePool {
     val homeService = NetworkModule.create<HomeService>()
+    val myPageService = NetworkModule.create<MyPageService>()
 }
