@@ -56,7 +56,7 @@
         android:paddingHorizontal="4dp"
         android:paddingTop="2dp"
         android:paddingBottom="3dp"
-        android:text="D- 2"
+        android:text="D- "
         android:textAppearance="@style/B3"
         android:textColor="@color/kyobo_white"
         app:layout_constraintStart_toStartOf="@+id/iv_home_borrowed"

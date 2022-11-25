@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/iv_home_book"
+        android:id="@+id/iv_home_catagory"
         android:layout_width="83dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -15,18 +16,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_home_book"
+        android:id="@+id/tv_home_catagory"
         style="@style/TextDefaultStyle"
         android:layout_width="83dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="트렌드 코리아 2023"
+        android:text="@{book.name}"
         android:textAppearance="@style/B1"
         android:textColor="@color/kyobo_black"
-        app:layout_constraintEnd_toEndOf="@+id/iv_home_book"
-        app:layout_constraintStart_toStartOf="@+id/iv_home_book"
-        app:layout_constraintTop_toBottomOf="@+id/iv_home_book" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_home_catagory"
+        app:layout_constraintStart_toStartOf="@+id/iv_home_catagory"
+        app:layout_constraintTop_toBottomOf="@+id/iv_home_catagory"
+        tools:text="트렌드 코리아 2023" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
