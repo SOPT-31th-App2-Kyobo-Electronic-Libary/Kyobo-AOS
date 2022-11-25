@@ -9,11 +9,15 @@ import coil.load
 import com.junewon.kyobo_android.data.model.response.HomeResponse
 import com.junewon.kyobo_android.databinding.ItemHomeBorrowedBinding
 
-class BorrowedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class BorrowedAdapter(
+    private val navigateDetailWith: (Int) -> Unit = {},
+    context: Context
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private var borrowedList: List<HomeResponse.Books.LendingBook> = emptyList()
 
     class BorrowedViewHolder(
+        private val navigateDetailWith: (Int) -> Unit = {},
         private val binding: ItemHomeBorrowedBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(book: HomeResponse.Books.LendingBook) {
@@ -22,7 +26,12 @@ class BorrowedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.View
                 0 -> binding.tvHomeBorrowedDays.append("DAY")
                 else -> binding.tvHomeBorrowedDays.append(book.dDay.toString())
             }
-            binding.ivHomeBorrowed.load(book.image)
+            binding.ivHomeBorrowed.run {
+                load(book.image)
+                setOnClickListener {
+                    navigateDetailWith(book.id)
+                }
+            }
         }
     }
 
@@ -34,7 +43,7 @@ class BorrowedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.View
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = ItemHomeBorrowedBinding.inflate(inflater, parent, false)
-        return BorrowedViewHolder(binding)
+        return BorrowedViewHolder(navigateDetailWith, binding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

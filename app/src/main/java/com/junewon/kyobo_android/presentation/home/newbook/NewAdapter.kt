@@ -9,16 +9,23 @@ import coil.load
 import com.junewon.kyobo_android.data.model.response.HomeResponse
 import com.junewon.kyobo_android.databinding.ItemHomeNewBinding
 
-class NewAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class NewAdapter(
+    private val navigateDetailWith: (Int) -> Unit = {},
+    context: Context
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private var newList: List<HomeResponse.Books.NewBook> = emptyList()
 
     class NewViewHolder(
+        private val navigateDetailWith: (Int) -> Unit = {},
         private val binding: ItemHomeNewBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(book: HomeResponse.Books.NewBook) {
             binding.tvHomeNew.text = book.name
-            binding.ivHomeNew.load(book.image)
+            binding.ivHomeNew.run {
+                load(book.image)
+                setOnClickListener { navigateDetailWith(book.id) }
+            }
         }
     }
 
@@ -30,7 +37,7 @@ class NewAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolde
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val binding = ItemHomeNewBinding.inflate(inflater, parent, false)
-        return NewViewHolder(binding)
+        return NewViewHolder(navigateDetailWith, binding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
