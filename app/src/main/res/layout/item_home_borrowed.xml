@@ -44,6 +44,8 @@
         android:paddingTop="3dp"
         android:paddingBottom="4dp"
         android:text="반납"
+        style="@style/TextDefaultStyle"
+        android:textAppearance="@style/B1"
         android:textColor="@color/kyobo_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/iv_home_borrowed"
